@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Băng Bùi Profile</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d0b33, #1c0f4a, #280e5c);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .stars {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      animation: moveStars 10s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes moveStars {
+      from { transform: translateY(0); }
+      to { transform: translateY(100vh); opacity: 0; }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    .avatar {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-image: url('anh.jpg');
+      background-size: cover;
+      background-position: center;
+      box-shadow: 0 0 25px rgba(138, 43, 226, 0.6);
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(138,43,226,0.5); }
+      50% { transform: scale(1.05); box-shadow: 0 0 35px rgba(138,43,226,0.9); }
+    }
+
+.title {
+  font-size: 2em;
+  margin-top: 20px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #80d0c7, #a084ca, #6a11cb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  color: transparent;
+}
+
+
+    .typing {
+  border-right: 3px solid white;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  animation: typing 5s steps(40, end) forwards;
+}
+
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    .typing.finished {
+  border-right: none;
+}
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    .info {
+      margin-top: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 15px 25px;
+      display: inline-block;
+      text-align: left;
+      box-shadow: 0 0 10px rgba(255,255,255,0.2);
+      line-height: 1.8;
+    }
+
+    a {
+      color: #80d0c7;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #b19cd9;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stars"></div>
+
+  <div class="container">
+    <div class="avatar"></div>
+    <div class="title typing">Băng Bùi Xin Chào 💙</div>
+    <div class="info">
+      🎂 <b>Sinh ngày:</b> 08/09/2011<br>
+      🏫 <b>Học tại:</b> THCS Tân Hưng, Cà Mau<br>
+      💻 <b>Sở thích:</b> Học code, đi chơi, nghe nhạc, nghịch ngu 🐧🐧<br>
+      🧠 <b>Kỹ năng:</b> C++, Lua, Python, HTML<br>
+      🔗 <b>Facebook:</b> 
+      <a href="https://www.facebook.com/share/16xMCKjCjm/" target="_blank">
+        facebook.com/BăngBùi
+      </a><br>
+      📧 <b>Gmail:</b> 
+      <a href="mailto:bawngbui46@gmail.com">bawngbui46@gmail.com</a><br>
+      🎶​ <b>Web nhạc của Băng:</b>
+      <a href="https://banglegen.github.io/End-of-Day-Chill/" target="_blank">Nghe và chill thôi</a><br>
+      ​🥮​ <b>Trung thu năm ấy:</b>
+      <a href="https://banglegen.github.io/Trung-Thu-2025/" target="_blank">Nhớ Trrung Thu 2022</a><br>
+      ​🏦​ <b>Web đa cấp:</b>
+      <a href="https://banglegen.github.io/shopminhbeo/" target="_blank">Lùa gà vũ trụ</a><br>
+      ​😈​📄​ <b>Chat ẩn danh:</b>
+      <a href="https://banglegen.github.io/Chat-An-Danh/" target="_blank">Nhắn tin đi có ai biết ai với ai đâu</a><br>
+    </div>
+  </div>
+
+ <script>
+  const starsContainer = document.querySelector('.stars');
+  for (let i = 0; i < 100; i++) {
+    const star = document.createElement('div');
+    star.classList.add('star');
+    star.style.left = Math.random() * 100 + 'vw';
+    star.style.animationDuration = (5 + Math.random() * 5) + 's';
+    star.style.opacity = Math.random();
+    starsContainer.appendChild(star);
+  }
+
+
+  setTimeout(() => {
+    document.querySelector('.typing').classList.add('finished');
+  }, 1300);
+</script>
+
+
+</body>
+</html>
